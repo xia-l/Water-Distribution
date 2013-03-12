@@ -44,6 +44,7 @@ public class BuildingWrapper extends Node{
 	}
 	public String toJSON()
 	{
-	return "";
+		return "";
+		
 	}
 }
