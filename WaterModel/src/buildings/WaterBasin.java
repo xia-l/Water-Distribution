@@ -18,19 +18,21 @@ public WaterBasin(Water water, float capacity,float currentWaterLevel,  ArrayLis
 	this.pipesOut = pipesOut;
 }
 
-public WaterBasin(Water water, float capacity, float currentWaterLevel)
+public WaterBasin(String id, Water water, float capacity, float currentWaterLevel)
 {
 	this.water = water;
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
-public WaterBasin(float capacity, float currentWaterLevel)
+public WaterBasin(String id, float capacity, float currentWaterLevel)
 {
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
 public void addPipe(Pipe pipe)

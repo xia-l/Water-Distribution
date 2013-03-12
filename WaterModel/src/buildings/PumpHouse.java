@@ -10,16 +10,18 @@ public class PumpHouse extends Node {
 	private Storage nonDrinkableStorage = new Storage();;
 	
 	
-	public PumpHouse(ArrayList<Pipe> pipesIn, ArrayList<Pipe> pipesOut)
+	public PumpHouse(String id, ArrayList<Pipe> pipesIn, ArrayList<Pipe> pipesOut)
 	{
 		this.pipesIn = pipesIn;
 		this.pipesOut = pipesOut;
+		this.id = id;
 	}
 	
-	public PumpHouse()
+	public PumpHouse(String id)
 	{
 		this.pipesIn = new ArrayList<Pipe>();
 		this.pipesOut = new ArrayList<Pipe>();
+		this.id = id;
 	}
 	public void addWaterToStorage(boolean drinkable, float amount)
 	{

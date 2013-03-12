@@ -6,24 +6,27 @@ public class WaterWell extends Node {
 private Water water;
 private float amountOfWater;
 private ArrayList<Pipe> pipesOut;
-public WaterWell(Water water, float amountOfWater, ArrayList<Pipe> pipesOut)
+public WaterWell(String id, Water water, float amountOfWater, ArrayList<Pipe> pipesOut)
 {
 	this.water = water;
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = pipesOut;
+	this.id = id;
 }
 
-public WaterWell(Water water, float amountOfWater)
+public WaterWell(String id, Water water, float amountOfWater)
 {
 	this.water = water;
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
-public WaterWell(float amountOfWater)
+public WaterWell(String id, float amountOfWater)
 {
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
 public void addPipe(Pipe pipe)

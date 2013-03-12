@@ -6,11 +6,13 @@ public class Storage {
 
 	private Water water;
 	private float amount;
+	public 	String id;
 	
-	public Storage(Water water, float amount)
+	public Storage(String id, Water water, float amount)
 	{
 		this.water = water;
 		this.amount = amount;
+		this.id = id;
 	}
 	
 	public Storage()

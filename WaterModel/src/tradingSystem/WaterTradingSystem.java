@@ -39,6 +39,7 @@ public class WaterTradingSystem {
 		private int priceLevel;
 		private float basePrice;
 		ArrayList<WaterDeal> reference;
+		private int counter;
 		
 		public DealGenerator(int frequency, int priceLevel, float basePrice, ArrayList<WaterDeal> reference)
 		{
@@ -46,6 +47,7 @@ public class WaterTradingSystem {
 			this.reference = reference;
 			this.priceLevel = priceLevel;
 			this.basePrice = basePrice;
+			this.counter  = 1;
 		}
 		
 		public void startGenerator()
@@ -122,10 +124,13 @@ public class WaterTradingSystem {
 					float addedQuality = 10/quality;
 					float qualityPrice = totalPrice * addedQuality;
 					totalPrice += qualityPrice;
-					Water water = new Water(quality, totalPrice, delivery.drinkable);
-					WaterDeal waterDeal = new WaterDeal(water, delivery.name(), amount,daysToDelivery);
+					String waterID = "Water" + this.counter + "Drinkable" + delivery.drinkable;
+					Water water = new Water(waterID, quality, totalPrice, delivery.drinkable);
+					String dealID = "Deal" + this.counter;
+					WaterDeal waterDeal = new WaterDeal(dealID, water, delivery.name(), amount,daysToDelivery);
 					this.reference.add(waterDeal);
 					System.out.println("New deal generated");
+					this.counter++;
 					
 					try {
 						System.out.println("Thread Sleeping");

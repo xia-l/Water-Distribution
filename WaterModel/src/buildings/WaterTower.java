@@ -10,27 +10,30 @@ public class WaterTower extends Node {
 	private float currentWaterLevel;
 	private ArrayList<Pipe> pipesOut;
 
-public WaterTower(Water water, float capacity,float currentWaterLevel,  ArrayList<Pipe> pipesOut)
+public WaterTower(String id, Water water, float capacity,float currentWaterLevel,  ArrayList<Pipe> pipesOut)
 {
 	this.water = water;
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = pipesOut;
+	this.id = id;
 }
 
-public WaterTower(Water water, float capacity, float currentWaterLevel)
+public WaterTower(String id, Water water, float capacity, float currentWaterLevel)
 {
 	this.water = water;
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
-public WaterTower(float capacity, float currentWaterLevel)
+public WaterTower(String id, float capacity, float currentWaterLevel)
 {
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = new ArrayList<Pipe>();
+	this.id = id;
 }
 
 public void addPipe(Pipe pipe)

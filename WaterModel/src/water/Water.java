@@ -4,12 +4,13 @@ public class Water {
 private int quality;
 private float price;
 private boolean drinkable;
-
-public Water(int quality, float price, boolean drinkable)
+public String id; 
+public Water(String id, int quality, float price, boolean drinkable)
 {
 	this.quality = quality;
 	this.price = price;
 	this.drinkable = drinkable;
+	this.id = id;
 }
 public void setQuality(int quality)
 {

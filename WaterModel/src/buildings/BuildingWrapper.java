@@ -7,11 +7,13 @@ import java.util.ArrayList;
 public class BuildingWrapper extends Node{
 
 	private Building building;
+	
 	private ArrayList<RoomWrapper> rooms;
 	
 	public BuildingWrapper(Building building, ArrayList<Room> rooms)
 	{
 		this.building = building;
+		this.id = building.id + "";
 		this.rooms = new ArrayList<RoomWrapper>();
 		for(int i=0; i<rooms.size(); i++)
 		{
