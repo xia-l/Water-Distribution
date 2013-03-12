@@ -83,11 +83,11 @@ public class WaterTradingSystem {
 					int priceSeed = randomPrice.nextInt(this.priceLevel);
 					if(priceSeed > 0)
 					{
-					this.basePrice *= priceSeed;
+					this.basePrice = priceSeed;
 					}
 					else
 					{
-						this.basePrice *= 1;
+						this.basePrice = 0.5f;
 					}
 					
 					Random qualityRandom = new Random();
@@ -118,7 +118,11 @@ public class WaterTradingSystem {
 						amount = 500;
 					}
 					
-					Water water = new Water(quality, basePrice, delivery.drinkable);
+					float totalPrice = basePrice * amount;
+					float addedQuality = 10/quality;
+					float qualityPrice = totalPrice * addedQuality;
+					totalPrice += qualityPrice;
+					Water water = new Water(quality, totalPrice, delivery.drinkable);
 					WaterDeal waterDeal = new WaterDeal(water, delivery.name(), amount,daysToDelivery);
 					this.reference.add(waterDeal);
 					System.out.println("New deal generated");
