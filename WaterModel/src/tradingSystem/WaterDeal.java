@@ -8,7 +8,7 @@ public class WaterDeal {
 	private String companyName;
 	private int daysToDelivery;
 	private int amount;
-	public String id, 
+	public String id;
 	public WaterDeal(String id, Water water, String companyName, int daysToDelivery, int amount)
 	{
 		this.water = water;
