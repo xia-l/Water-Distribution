@@ -6,21 +6,24 @@ public class WaterWell extends Node {
 private Water water;
 private float amountOfWater;
 private ArrayList<Pipe> pipesOut;
-private float maxFlow;
-public WaterWell(Water water, float amountOfWater, float maxFlow, ArrayList<Pipe> pipesOut)
+public WaterWell(Water water, float amountOfWater, ArrayList<Pipe> pipesOut)
 {
 	this.water = water;
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = pipesOut;
-	this.maxFlow = maxFlow;
 }
 
-public WaterWell(Water water, float amountOfWater, float maxFlow)
+public WaterWell(Water water, float amountOfWater)
 {
 	this.water = water;
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = new ArrayList<Pipe>();
-	this.maxFlow = maxFlow;
+}
+
+public WaterWell(float amountOfWater)
+{
+	this.amountOfWater = amountOfWater;
+	this.pipesOut = new ArrayList<Pipe>();
 }
 
 public void addPipe(Pipe pipe)
@@ -56,16 +59,6 @@ public void setWater(Water water)
 public float getAmountOfWaterLeft()
 {
 	return this.amountOfWater;
-}
-
-public float getMaxFlow()
-{
-	return this.maxFlow;
-}
-
-public void setMaxFlow(float maxFlow)
-{
-	this.maxFlow = maxFlow;
 }
 
 public boolean consumeWater(float consumption)

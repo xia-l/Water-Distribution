@@ -10,8 +10,6 @@ public class WaterBasin extends Node {
 	private float currentWaterLevel;
 	private ArrayList<Pipe> pipesOut;
 
-	private float maxFlow;
-
 public WaterBasin(Water water, float capacity,float currentWaterLevel,  ArrayList<Pipe> pipesOut)
 {
 	this.water = water;
@@ -23,6 +21,13 @@ public WaterBasin(Water water, float capacity,float currentWaterLevel,  ArrayLis
 public WaterBasin(Water water, float capacity, float currentWaterLevel)
 {
 	this.water = water;
+	this.capacity = capacity;
+	this.currentWaterLevel = currentWaterLevel;
+	this.pipesOut = new ArrayList<Pipe>();
+}
+
+public WaterBasin(float capacity, float currentWaterLevel)
+{
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = new ArrayList<Pipe>();
@@ -74,15 +79,6 @@ public float getCurrentWaterLevel()
 	return this.currentWaterLevel;
 }
 
-public float getMaxFlow()
-{
-	return this.maxFlow;
-}
-
-public void setMaxFlow(float maxFlow)
-{
-	this.maxFlow = maxFlow;
-}
 
 public boolean consumeWater(float consumption)
 {

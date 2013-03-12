@@ -16,6 +16,11 @@ public class PumpHouse extends Node {
 		this.pipesOut = pipesOut;
 	}
 	
+	public PumpHouse()
+	{
+		this.pipesIn = new ArrayList<Pipe>();
+		this.pipesOut = new ArrayList<Pipe>();
+	}
 	public void addWaterToStorage(boolean drinkable, float amount)
 	{
 		if(drinkable)
