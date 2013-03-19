@@ -1,4 +1,6 @@
 package water;
+import java.util.ArrayList;
+
 import dataObjects.*;
 public class WaterTap {
 
@@ -6,6 +8,7 @@ public class WaterTap {
 	private String ID;
 	private WaterSensor sensor;
 	private Water water;
+	private ArrayList<Measurement> measurements;
 	
 	public WaterTap(String roomNumber, String ID, WaterSensor sensor, Water water)
 	{
@@ -13,6 +16,7 @@ public class WaterTap {
 		this.ID = ID;
 		this.sensor = sensor;
 		this.water = water;
+		measurements =  new ArrayList<Measurement>();
 	}
 	
 	public WaterTap(String roomNumber, String ID, WaterSensor sensor)
@@ -20,6 +24,17 @@ public class WaterTap {
 		this.roomNumber = roomNumber;
 		this.ID = ID;
 		this.sensor = sensor;
+		measurements = new ArrayList<Measurement>();
+	}
+	
+	public void AddMeasurement()
+	{
+		//Do something
+	}
+	
+	public ArrayList GetMeasurements()
+	{
+		return this.measurements;
 	}
 	
 	public String getRoomNumber()
