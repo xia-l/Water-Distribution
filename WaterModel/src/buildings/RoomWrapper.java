@@ -9,15 +9,17 @@ import water.WaterTap;
 public class RoomWrapper {
 private String roomID;
 private ArrayList<WaterTap> waterTaps; 
+private int buildingID;
 
-public RoomWrapper(Room room)
+public RoomWrapper(Room room, int buildingID)
 {
 	this.roomID = room.id;
+	this.buildingID = buildingID;
 	this.waterTaps = new ArrayList<WaterTap>();
 	for(int i=0; i< room.waterSensors.size(); i++)
 	{
 		WaterSensor sensor = room.waterSensors.get(i);
-		WaterTap tap = new WaterTap(this.roomID, sensor.id, sensor);
+		WaterTap tap = new WaterTap(this.roomID, sensor.id, sensor, buildingID);
 		this.waterTaps.add(tap);
 	}
 }
@@ -41,6 +43,16 @@ public String getRoomID()
 public void setRoomID(String ID)
 {
 	this.roomID = ID;
+}
+
+public int getBuildingID()
+{
+	return this.buildingID;
+}
+
+public void setBuildingID(int buildingID)
+{
+	this.buildingID = buildingID;
 }
 
 public ArrayList<WaterTap> getWaterTaps()

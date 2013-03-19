@@ -7,17 +7,17 @@ import java.util.ArrayList;
 public class BuildingWrapper extends Node{
 
 	private Building building;
-	
 	private ArrayList<RoomWrapper> rooms;
-	
+	private ArrayList<Pipe> pipesIn;
 	public BuildingWrapper(Building building, ArrayList<Room> rooms)
 	{
 		this.building = building;
 		this.id = building.id + "";
 		this.rooms = new ArrayList<RoomWrapper>();
+		this.pipesIn = new ArrayList<Pipe>();
 		for(int i=0; i<rooms.size(); i++)
 		{
-			RoomWrapper wrapper = new RoomWrapper(rooms.get(i));
+			RoomWrapper wrapper = new RoomWrapper(rooms.get(i), building.bid);
 			this.rooms.add(wrapper);
 		}
 	}
@@ -44,9 +44,32 @@ public class BuildingWrapper extends Node{
 		}
 		return null;
 	}
+	
+	public void addPipeIn(Pipe pipe)
+	{
+		this.pipesIn.add(pipe);
+	}
+
+	public int getAmountOfPipesIn()
+	{
+		return this.pipesIn.size();
+	}
+
+	public boolean removePipe(Pipe pipe)
+	{
+		return this.pipesIn.remove(pipe);
+	}
+	
+	public ArrayList<Pipe> getPipesIn()
+	{
+		return this.pipesIn;
+	}
+	
 	public String toJSON()
 	{
 		return "";
 		
 	}
+
+
 }

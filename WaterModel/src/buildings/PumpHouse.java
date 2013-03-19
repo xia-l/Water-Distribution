@@ -71,6 +71,14 @@ public class PumpHouse extends Node {
 		return this.pipesIn.size();
 	}
 
+	public boolean removePipe(Pipe pipe)
+	{
+		boolean removed;
+		removed = this.pipesIn.remove(pipe);
+		removed = this.pipesOut.remove(pipe);
+		return removed;
+	}
+	
 	public boolean removePipeIn(Pipe pipe)
 	{
 		return this.pipesIn.remove(pipe);
