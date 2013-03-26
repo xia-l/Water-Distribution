@@ -1,5 +1,7 @@
 package water;
 
+import com.google.gson.Gson;
+
 public class Water {
 private int quality;
 private float price;
@@ -44,6 +46,7 @@ public boolean isDrinkable()
 
 public String toJSON()
 {
-	return "To be implemented";
+Gson gson = new Gson();
+	return gson.toJson(this);
 }
 }

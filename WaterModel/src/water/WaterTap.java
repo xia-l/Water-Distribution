@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import org.jdom2.JDOMException;
 
+import com.google.gson.Gson;
+
 import dataObjects.*;
 public class WaterTap {
 
@@ -36,7 +38,7 @@ public class WaterTap {
 		this.buildingID = buildingID;
 	}
 		
-	public ArrayList getMeasurements()
+	public ArrayList<Measurement> getMeasurements()
 	{
 		return this.measurements;
 	}
@@ -123,7 +125,8 @@ public class WaterTap {
 	
 	public String toJSON()
 	{
-	return "";
+	Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 	
 }

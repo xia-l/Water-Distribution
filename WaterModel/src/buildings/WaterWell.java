@@ -1,6 +1,10 @@
 package buildings;
 import java.util.ArrayList;
+
+import com.google.gson.Gson;
+
 import water.Water;
+import com.google.gson.Gson;
 
 public class WaterWell extends Node {
 private Water water;
@@ -12,6 +16,7 @@ public WaterWell(String id, Water water, float amountOfWater, ArrayList<Pipe> pi
 	this.amountOfWater = amountOfWater;
 	this.pipesOut = pipesOut;
 	this.id = id;
+	this.isSource = true;
 }
 
 public WaterWell(String id, Water water, float amountOfWater)
@@ -79,7 +84,8 @@ public boolean consumeWater(float consumption)
 
 public String toJSON()
 {
-return "";
+Gson gson = new Gson();
+	return gson.toJson(this);
 }
 
 }

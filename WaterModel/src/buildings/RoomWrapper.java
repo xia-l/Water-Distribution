@@ -2,6 +2,8 @@ package buildings;
 
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+
 import dataObjects.*;
 import water.Water;
 import water.WaterTap;
@@ -80,6 +82,7 @@ public WaterTap getWaterTap(String ID)
 
 public String toJSON()
 {
-return "";
+Gson gson = new Gson();
+	return gson.toJson(this);
 }
 }

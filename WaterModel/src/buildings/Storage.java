@@ -1,6 +1,8 @@
 package buildings;
 
 
+import com.google.gson.Gson;
+
 import water.Water;
 public class Storage {
 
@@ -58,7 +60,8 @@ public class Storage {
 	
 	public String toJSON()
 	{
-	return "";
+	Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 	
 }

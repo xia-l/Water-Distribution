@@ -173,7 +173,6 @@ public class WaterTradingSystem {
 	
 	public void stop()
 	{
-		System.out.println("Stopping..");
 		this.generator.stopGenerator();
 	}
 }

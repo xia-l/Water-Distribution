@@ -1,6 +1,8 @@
 package buildings;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+
 import water.Water;
 
 public class PumpHouse extends Node {
@@ -95,6 +97,7 @@ public class PumpHouse extends Node {
 	}
 	public String toJSON()
 	{
-	return "";
+	Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 }

@@ -4,6 +4,7 @@ import dataObjects.Building;
 import dataObjects.Room;
 
 import java.util.ArrayList;
+import com.google.gson.Gson;
 public class BuildingWrapper extends Node{
 
 	private Building building;
@@ -67,7 +68,8 @@ public class BuildingWrapper extends Node{
 	
 	public String toJSON()
 	{
-		return "";
+		Gson gson = new Gson();
+		return gson.toJson(this);
 		
 	}
 

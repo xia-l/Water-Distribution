@@ -3,6 +3,7 @@ package buildings;
 import java.util.ArrayList;
 
 import water.Water;
+import com.google.gson.Gson;
 
 public class WaterTower extends Node {
 	private Water water;
@@ -17,6 +18,7 @@ public WaterTower(String id, Water water, float capacity,float currentWaterLevel
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = pipesOut;
 	this.id = id;
+	this.isSource = true;
 }
 
 public WaterTower(String id, Water water, float capacity, float currentWaterLevel)
@@ -110,6 +112,7 @@ public boolean addWaterToTower(float amountOfNewWater)
 
 public String toJSON()
 {
-return "";
+Gson gson = new Gson();
+	return gson.toJson(this);
 }
 }

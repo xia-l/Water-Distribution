@@ -1,5 +1,7 @@
 package tradingSystem;
 
+import com.google.gson.Gson;
+
 import water.Water;
 
 public class WaterDeal {
@@ -41,6 +43,7 @@ public class WaterDeal {
 	
 	public String toJSON()
 	{
-	return "";
+	Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 }

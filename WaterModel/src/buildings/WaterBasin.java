@@ -2,6 +2,8 @@ package buildings;
 
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+
 import water.Water;
 
 public class WaterBasin extends Node {
@@ -16,6 +18,7 @@ public WaterBasin(Water water, float capacity,float currentWaterLevel,  ArrayLis
 	this.capacity = capacity;
 	this.currentWaterLevel = currentWaterLevel;
 	this.pipesOut = pipesOut;
+	this.isSource = true;
 }
 
 public WaterBasin(String id, Water water, float capacity, float currentWaterLevel)
@@ -111,6 +114,7 @@ public String rain(float amountOfRain)
 
 public String toJSON()
 {
-return "";
+	Gson gson = new Gson();
+	return gson.toJson(this);
 }
 }
