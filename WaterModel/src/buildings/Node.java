@@ -9,4 +9,5 @@ public boolean isSource = false;
 
  public abstract boolean removePipe(Pipe p);
 
+ public abstract String toJSON();
 }

@@ -13,7 +13,8 @@ private ArrayList<Pipe> pipes;
 
 public WaterGraph()
 {
-	
+	this.nodes = new ArrayList<Node>();
+	this.pipes = new ArrayList<Pipe>();
 }
 
 public ArrayList<Node> getNodes()
