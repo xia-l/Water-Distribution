@@ -319,8 +319,8 @@ public List<SensorValue> GetSensorValue(String sensor) throws JDOMException, IOE
 			   SensorValue sensorValue = new SensorValue();
 			   Element objectNode = (Element) objectList.get(h);  
 			   sensorValue.timestamp = objectNode.getChildText("timestamp");
-			   sensorValue.value = Integer.parseInt(objectNode.getChildText("val"));
-			   sensorValue.bid =    sensorValue.value = Integer.parseInt(objectNode.getChildText("bid"));
+			   sensorValue.value = Float.parseFloat(objectNode.getChildText("val"));
+			   sensorValue.bid =     Integer.parseInt(objectNode.getChildText("bid"));
 			   sensorValue.uuid =   sensorValue.timestamp = objectNode.getChildText("uuid");
 			   sensorValue.resource_uri =   sensorValue.timestamp = objectNode.getChildText("resource_uri");
 			   sensorValue.id =   sensorValue.timestamp = objectNode.getChildText("id");
